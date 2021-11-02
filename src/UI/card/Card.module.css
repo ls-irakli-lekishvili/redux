@@ -1,0 +1,20 @@
+.card {
+    max-width: 60%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardHeader {
+    background: rebeccapurple;
+}
+
+
+.cardBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
