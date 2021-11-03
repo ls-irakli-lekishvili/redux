@@ -1,9 +1,10 @@
 import React, {FocusEventHandler, FormEventHandler, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {update} from "../../redux/userSlice";
 import Input from "../../UI/input/Input";
 import Card from "../../UI/card/Card";
 import classes from './UpdateForm.module.css';
+import Button from "../../UI/button/Button";
 
 const UpdateForm = () => {
     const [emailError, setEmailError] = useState<boolean>(false);
@@ -17,6 +18,7 @@ const UpdateForm = () => {
         event.preventDefault();
         const email = emailRef.current?.value || null;
         const name = nameRef.current?.value || null;
+
 
         if (validateInput(email, name)) {
             dispatch(update({name, email}));
@@ -38,14 +40,16 @@ const UpdateForm = () => {
     };
 
 
-    const onBlurHandler: FocusEventHandler<HTMLFormElement> = () => {
+    const onFocusHandler: FocusEventHandler<HTMLFormElement> = () => {
         setEmailError(false);
         setNameError(false);
     };
 
     return (
         <Card header={'update info'}>
-            <form onSubmit={onSubmitHandler} onBlur={onBlurHandler} className={classes.form}>
+            <form onSubmit={onSubmitHandler}
+                  onFocus={onFocusHandler}
+                  className={classes.form}>
                 <Input showError={nameError}
                        ref={nameRef}
                        placeholder={'update name'}
@@ -58,7 +62,7 @@ const UpdateForm = () => {
                        type={'email'}
                        key={'email'}
                 />
-                <button type="submit">change</button>
+                <Button type="submit">update</Button>
             </form>
         </Card>
     );

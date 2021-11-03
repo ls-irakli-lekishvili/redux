@@ -1,5 +1,21 @@
-.error, .error:focus {
-    outline: none;
-    background: magenta;
+.Input {
+    all: initial;
+    border-radius: 2em;
+    border: 1px solid rgba(255,255,255, .7);
+    padding: .5em;
+    text-indent: .5rem;
+    color: white;
+    width: 100%;
+}
+
+.Input::placeholder {
+    color: #bab6b6;
+}
+
+.Input:focus {
+    border-color: white;
+}
+
+.Input.error {
     border-color: red;
 }

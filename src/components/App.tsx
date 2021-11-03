@@ -6,9 +6,9 @@ import Header from "./header/Header";
 
 const App = () => {
     return (
-        <div >
+        <div className={classes.App}>
             <Header/>
-            <div className={classes.App}>
+            <div className={classes.Body}>
                 <UpdateForm/>
             </div>
         </div>

@@ -1,14 +1,28 @@
 .card {
+    width: 500px;
     max-width: 60%;
     height: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    border-radius: 1em;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(7, 1, 94) 0%, rgba(30,30,149,1) 43%, rgba(21,80,92,1) 100%);
+    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+    perspective: 50rem;
+
+    animation: easeIn forwards 1s cubic-bezier(0.1, 0.45, 0.5, 0.76);
 }
 
 .cardHeader {
-    background: rebeccapurple;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-top: 1.5em;
 }
 
 
@@ -17,4 +31,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 40%;
+    height: 100%;
+}
+
+.cardBody > form {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@keyframes easeIn {
+    from {
+        transform:  perspective(500px)
+                    rotateX(-10deg)
+                    scale(.8);
+    }
+    to {
+        transform:
+                perspective(500px)
+                rotateX(0deg)
+                scale(1);
+    }
 }

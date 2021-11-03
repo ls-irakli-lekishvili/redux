@@ -1,6 +1,14 @@
 .header {
     width: 100%;
-    background: aquamarine;
-    min-height: 50px;
-    height: 4%;
+    height: 6%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(7, 1, 94) 0%, rgba(30,30,149,1) 43%, rgba(21,80,92,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.welcomeText {
+    color: white;
+    margin-right: 2em;
 }

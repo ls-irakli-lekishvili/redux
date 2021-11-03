@@ -8,7 +8,9 @@ const Header: React.FC = () => {
 
     return (
         <div className={classes.header}>
-            {name}
+            <div className={classes.welcomeText}>
+                Hello {name}
+            </div>
         </div>
     );
 };
